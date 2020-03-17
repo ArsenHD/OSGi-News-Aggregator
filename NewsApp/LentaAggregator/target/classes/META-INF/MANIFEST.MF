@@ -1,0 +1,22 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1584405506669
+Build-Jdk: 1.8.0_231
+Built-By: HP
+Bundle-ClassPath: .,gson-2.8.6.jar
+Bundle-ManifestVersion: 2
+Bundle-Name: Lenta Aggregator
+Bundle-SymbolicName: lenta-aggregator
+Bundle-Version: 1.0.0.SNAPSHOT
+Created-By: Apache Maven Bundle Plugin
+Embed-Dependency: gson
+Embedded-Artifacts: gson-2.8.6.jar;g="com.google.code.gson";a="gson";v="
+ 2.8.6"
+Export-Package: ru.softwerke.practice.newsapp.aggregator.lenta;uses:="ru
+ .softwerke.practice.newsapp.aggregator.util";version="1.0.0",ru.softwer
+ ke.practice.newsapp.aggregator.lenta.util;version="1.0.0"
+Import-Package: ru.softwerke.practice.newsapp.aggregator.util;version="[
+ 1.0,2)",ru.softwerke.practice.newsapp.aggregator;version="[1.0,2)"
+Require-Capability: osgi.ee;filter:="(&(osgi.ee=JavaSE)(version=1.8))"
+Service-Component: OSGI-INF/ru.softwerke.practice.newsapp.aggregator.len
+ ta.LentaAggregator.xml
+Tool: Bnd-4.2.0.201903051501

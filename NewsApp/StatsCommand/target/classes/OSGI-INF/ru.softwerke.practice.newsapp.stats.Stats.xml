@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.0.0" name="stats Gogo command">
+    <property name="osgi.command.scope" value="news"/>
+    <property name="osgi.command.function" value="stats"/>
+    <service servicefactory="false">
+        <provide interface="java.lang.Object"/>
+    </service>
+    <reference name="aggregators" interface="ru.softwerke.practice.newsapp.aggregator.Aggregator" cardinality="1..n" policy="dynamic" bind="setAggregators" unbind="unsetAggregators"/>
+    <implementation class="ru.softwerke.practice.newsapp.stats.Stats"/>
+</scr:component>
