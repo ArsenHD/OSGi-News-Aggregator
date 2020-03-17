@@ -5,6 +5,6 @@
     <service servicefactory="false">
         <provide interface="java.lang.Object"/>
     </service>
-    <reference name="aggregators" interface="ru.softwerke.practice.newsapp.aggregator.Aggregator" cardinality="1..n" policy="dynamic" bind="setAggregators" unbind="unsetAggregators"/>
+    <reference name="aggregators" interface="ru.softwerke.practice.newsapp.aggregator.Aggregator" cardinality="0..n" policy="dynamic" bind="setAggregators" unbind="unsetAggregators"/>
     <implementation class="ru.softwerke.practice.newsapp.stats.Stats"/>
 </scr:component>

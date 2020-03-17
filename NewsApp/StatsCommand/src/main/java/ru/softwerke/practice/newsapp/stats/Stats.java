@@ -19,7 +19,7 @@ import static java.util.stream.Collectors.toMap;
 })
 public class Stats {
     @Reference(
-            cardinality = ReferenceCardinality.MANDATORY_MULTIPLE,
+            cardinality = ReferenceCardinality.OPTIONAL_MULTIPLE,
             policy = ReferencePolicy.DYNAMIC,
             referenceInterface = Aggregator.class,
             bind = "setAggregators",
@@ -34,6 +34,11 @@ public class Stats {
     }
 
     public synchronized void stats() {
+        if (aggregators.isEmpty()) {
+            System.out.println("No aggregators available");
+            return;
+        }
+
         Map<Integer, Aggregator> optionAggregator = new HashMap<>();
         System.out.println("Choose the sources to aggregate the news from:");
         int i = 1;
@@ -84,6 +89,11 @@ public class Stats {
     }
 
     public synchronized void stats(String source) {
+        if (aggregators.isEmpty()) {
+            System.out.println("No aggregators available");
+            return;
+        }
+
         Aggregator aggregator = null;
         for (Aggregator a: aggregators) {
             if (source.equals(getSource(a))) {
